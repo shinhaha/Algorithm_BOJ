@@ -10,7 +10,7 @@ public class CodejamA {
 		int count = 0;
 		int swap = 0;
 		
-		while (count < T) {// 줄 반복
+		while (count < T) {
 			String S = sc.nextLine();//+,-
 			String[] H=S.split(" ");
 			String[] a = new String[H[0].length()];//문자 길이만큼의 배열
@@ -19,11 +19,11 @@ public class CodejamA {
 			Arrays.fill(visit,true);
 			for (int x = 0; x <a.length; x++) {
 				a[x] = S.substring(x,x+1);
-			}//배열에 잘라서 넣음
+			}//배열에 잘라서 넣음.
 			int K = Integer.parseInt(H[H.length-1]);
 			for (int x=0; x<a.length; x++){
 				if (a[x].equals("-")) {// 돌다가 - 만나면
-					if (((x + K)<a.length)) {// 배열초과가아니면
+					if (((x + K)<=a.length)) {// 배열초과가아니면
 						swap++;
 						for (int y = 0; y < K; y++) {// k개 뒤집는다
 							if(a[x + y].equals("-")&&visit[x + y]) {
@@ -38,7 +38,7 @@ public class CodejamA {
 						for (int y = 0; y<K; y++)
 							visit[x + y] = true;
 					}
-					else break; // 배열초과
+					else break; // 배열초과 break
 				}
 				if(a[x].equals("+"))// 돌다가 +만나면
 					continue;
