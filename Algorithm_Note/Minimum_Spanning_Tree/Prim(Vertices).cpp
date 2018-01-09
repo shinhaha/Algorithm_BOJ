@@ -19,8 +19,8 @@ int main() {
 		int a, b, c; scanf("%d %d %d", &a, &b, &c);
 		Vec[a - 1].push_back(make_pair(b - 1, c)); Vec[b - 1].push_back(make_pair(a - 1, c));
 	}
-	int ret = 0; int size = 0; int src = 0; key[0] = 0;
-	pq.push(make_pair(0,src));//weight,source
+	int ret = 0; int size = 0; int src = 0; key[src] = 0;
+	pq.push(make_pair(0, src));//weight,source
 	while (!pq.empty()) {
 		int weight = pq.top().first;//VerWeight
 		int vertices = pq.top().second;//source
