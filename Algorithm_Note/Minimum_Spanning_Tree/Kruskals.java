@@ -1,4 +1,3 @@
-package algorithm7;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Scanner;
@@ -58,13 +57,6 @@ public class Kruskals {
 			}
 		}
 		System.out.println(minCost);
-	}
-
-	public int Find(int i){
-		if(parent[i]<0)
-			return i;
-		else
-			return Find(parent[i]);
 	}
 
 	public static class Edge implements Comparable<Edge>{
