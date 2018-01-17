@@ -7,30 +7,25 @@ using namespace std;
 int n;
 vector<int> v;
 
-void Swap(int i, int j) {
-	int tmp = v[i];
-	v[i] = v[j];
-	v[j] = tmp;
-}
-
 int Partition(int p, int r) {
 	int x = v[r];
 	int i = p - 1;
 	for (int j = p; j < r; j++) {
 		if (v[j] <= x) {
 			i++;
-			Swap(i, j);
+			swap(v[i],v[j]);
 		}
 	}
-	Swap(i + 1, r);
-	return i + 1;
+	swap(v[i+1],v[r]);
+	return i+1;
 }
 
 int RandomizedPartition(int p, int r) {
 	int i = rand() % (r - p + 1) + p;
-	Swap(r, i);
+	swap(v[r],v[i]);
 	return Partition(p, r);
 }
+
 int Randomized_Select(int p, int r, int i) {
 	if (p == r)return v[p];
 	int q = RandomizedPartition(p, r);
