@@ -9,6 +9,6 @@ using namespace std;
 
 int main() {
 	int a, b, c, d, e; scanf("%d %d %d %d %d", &a, &b, &c, &d, &e);
-	int ret = min(min(a, b), c) + min(c, d) - 50;
+	int ret = min(min(a, b), c) + min(d, e) - 50;
 	printf("%d", ret);
 }
