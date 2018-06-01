@@ -12,3 +12,4 @@ int main() {
 		printf("%d %d\n", c - b, d - a);
 	}
 }
+
